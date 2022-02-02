@@ -21,12 +21,4 @@ And next: This is not an introduction neither to TensorFlow nor to finetuning or
 ## Getting the pretrained weights
 Unlike VGG or Inception, TensorFlow doesn't ship with a pretrained AlexNet. Caffe does, but it's not to trivial to convert the weights manually in a structure usable by TensorFlow. Luckily [Caffe to TensorFlow](https://github.com/ethereon/caffe-tensorflow) exists, a small conversion tool, to translate any `*prototxt` model definition from caffe to python code and a TensorFlow model, as well as conversion of the weights. I tried it on my own and it works pretty straight forward. Anyway, [here](http://www.cs.toronto.edu/~guerzhoy/tf_alexnet/) you can download the already converted weights.
 
-## Model structure
-To start finetune AlexNet, we first have to create the so-called "Graph of the Model". This is the same thing I defined for BatchNormalization [in my last blog post](https://kratzert.github.io/2016/02/12/understanding-the-gradient-flow-through-the-batch-normalization-layer.html) but for the entire model. But don't worry, we don't have to do everything manually.
-Let's first look onto the model structure as shown in the original paper:
 
-<div class="fig figcenter fighighlight">
-  <img src="/images/finetune_alexnet/alexnet.png">
-  <div class="figcaption"><br> Architecture of AlexNet, as shown in the original paper (link above).<br>
-  </div>
-</div>
